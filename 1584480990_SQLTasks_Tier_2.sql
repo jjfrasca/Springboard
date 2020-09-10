@@ -34,7 +34,7 @@ exploring the data, and getting acquainted with the 3 tables. */
 /* QUESTIONS 
 /* Q1: Some of the facilities charge a fee to members, but some do not.
 Write a SQL query to produce a list of the names of the facilities that do. */
-
+ TESTl...
 
 /* Q2: How many facilities do not charge a fee to members? */
 
@@ -86,11 +86,81 @@ QUESTIONS:
 The output of facility name and total revenue, sorted by revenue. Remember
 that there's a different cost for guests and members! */
 
+SELECT 
+    facility_name,
+    SUM(revenue) AS total_revenue
+FROM (
+    SELECT
+        facid,
+        name AS facility_name, 
+        CASE WHEN memid = 0 THEN guestcost * slots
+        ELSE membercost * slots END AS revenue
+    FROM Bookings
+    JOIN Facilities
+    USING (facid)
+    )
+GROUP BY facility_name
+HAVING total_revenue < 1000
+ORDER BY total_revenue;
+
+
 /* Q11: Produce a report of members and who recommended them in alphabetic surname,firstname order */
 
+--STILL WORKING ON THIS, RETURNS NO ANSWERS
+
+SELECT 
+    s1.surname, 
+    s1.firstname, 
+    s2.recommended_by
+
+FROM (
+    SELECT m2.surname, m2.firstname, recommendedby
+    FROM (
+        SELECT 
+            memid,
+            surname,
+            firstname
+        FROM Members) AS m1
+    JOIN Members AS m2
+    ON m1.memid = m2.recommendedby) AS s1
+
+JOIN (
+    WITH r AS (
+        SELECT
+            recommendedby
+         FROM Members)
+
+    SELECT r.recommendedby, (surname||' '|| firstname) AS recommended_by
+    FROM r
+    JOIN Members AS m
+    ON r.recommendedby = m.memid) AS s2
+
+ON s1.recommendedby = s2. recommended_by; 
 
 /* Q12: Find the facilities with their usage by member, but not guests */
 
+SELECT
+    name AS facility,
+    COUNT(bookid) AS usage_by_member
+FROM Facilities AS f
+JOIN Bookings AS b
+USING (facid)
+WHERE memid > 0
+GROUP BY facility;
 
 /* Q13: Find the facilities usage by month, but not guests */
 
+SELECT
+    facility,
+    month,
+    COUNT(*)
+FROM (
+    SELECT
+        name AS facility,
+        strftime('%m', starttime) AS month,
+        bookid
+    FROM Facilities AS f
+    JOIN Bookings AS b
+    USING (facid)
+    WHERE memid > 0) AS sub
+GROUP BY facility, month;
