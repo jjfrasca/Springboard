@@ -11,24 +11,24 @@ Being able to predict a school’s attendance/chronic absenteeism numbers and id
 
 ## the approach
 
-The goal was to predict next year's rates of chronic absenteeism by school, grade, and demographic variable using attendance data.
+The goal was to predict next year's rates of chronic absenteeism by school, grade, and demographic variable using attendance data. [NYC DOE rates of % Chronically Absent across Time](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/ChronicAbsent_overtime.png)
 
 ## the findings
-### [see README figures here for visuals](https://github.com/jjfrasca/Springboard/tree/main/Capstone_3/Capstone_3/reports/figures/README_figures)
+#### select links to see images
 
 - There was variation in rates of Chronic Absenteeism across Demographic Variable, Grade, Borough, and District:
-    - % Chronically Absent by Demographic Variable
-    - % Chronically Absent by Grade
-    - Next Year % Chronically Absent by District
+    - [% Chronically Absent by Demographic Variable](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/DemVar_violinplot.png)
+    - [% Chronically Absent by Grade](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/Grade_violinplot.png)
+    - [Next Year % Chronically Absent by District](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/District_Num_violinplot.png)
     - [Next Year % Chronically Absent by Borough](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/Borough_violinplot.png)
     
-- Both classification and regression models were tested. The best performing model was the Random Forest Regression model.
+- Both classification and regression models were tested. The best performing model was the [Random Forest Regression model.](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/RF_regressor_modelMetrics.png)
 
-- A Decision Tree model was also created to get a very interpretable understanding. The plot shows that the model is simply using ‘%Attendance’,  ‘% Chronically Absent’ & ‘% Chronically Absent - diff from 2 ye avg’  to predict the 3 classes.  This may have some informative value to schools, it simply shows that if a school or student group within a school is Chronically Absent more than 44.65% of the time this year they will be in ‘High’ group of Chronically Absent next year. Also if they are at or below 44.65% Chronically Absent and above 95.55% attendance they will be in the ‘Low’ group next year and if their attendance is less than 95.55% then they would be in the ‘Medium’ group. 
+- A Decision Tree model was also created to get a very interpretable understanding. The [Decision Tree plot](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/decisionTree_plot.png) shows that the model is simply using ‘%Attendance’,  ‘% Chronically Absent’ & ‘% Chronically Absent - diff from 2 ye avg’  to predict the 3 classes.  This may have some informative value to schools, it simply shows that if a school or student group within a school is Chronically Absent more than 44.65% of the time this year they will be in ‘High’ group of Chronically Absent next year. Also if they are at or below 44.65% Chronically Absent and above 95.55% attendance they will be in the ‘Low’ group next year and if their attendance is less than 95.55% then they would be in the ‘Medium’ group. 
 
 - Trends in 2019-20 seem not to be comparable with what was witnessed during covid-19 (this is understandable as it was a blackswan event).
 
-- There are schools/districts/boroughs that are doing significantlly better in having low rates of Chronic Absenteeism with the groups that have the highest rates of chronic absenteeism (ie. grades 9-12, PreK & K, Students with Disabilities (SWD), Blackn &  Hispanic students. They could be studied for best practices to share with others.
+- There are schools/districts/boroughs that are doing significantlly better in having low rates of Chronic Absenteeism with the groups that have the highest rates of chronic absenteeism (ie. grades 9-12, PreK & K, Students with Disabilities (SWD), Blackn &  Hispanic students. They could be studied for best practices to share with others. [See example of top perfomring schools for SWD barplot here](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/topSchools_SWD.png)
 
 
 
