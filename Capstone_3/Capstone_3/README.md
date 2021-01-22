@@ -20,7 +20,7 @@ The goal was to predict next year's rates of chronic absenteeism by school, grad
     - % Chronically Absent by Demographic Variable
     - % Chronically Absent by Grade
     - Next Year % Chronically Absent by District
-    - Next Year % Chronically Absent by Borough
+    - [Next Year % Chronically Absent by Borough](https://github.com/jjfrasca/Springboard/blob/main/Capstone_3/Capstone_3/reports/figures/README_figures/Borough_violinplot.png)
     
 - Both classification and regression models were tested. The best performing model was the Random Forest Regression model.
 
