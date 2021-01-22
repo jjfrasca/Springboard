@@ -14,9 +14,9 @@ Being able to predict a school’s attendance/chronic absenteeism numbers and id
 The goal was to predict next year's rates of chronic absenteeism by school, grade, and demographic variable using attendance data.
 
 ## the findings
-### [see README figures here for visuals] (https://github.com/jjfrasca/Springboard/tree/main/Capstone_3/Capstone_3/reports/figures/README_figures)
+### [see README figures here for visuals](https://github.com/jjfrasca/Springboard/tree/main/Capstone_3/Capstone_3/reports/figures/README_figures)
 
-- There was variation in rates of Chronic Absenteeism across Demographic Variable, Grade, Borough, and District
+- There was variation in rates of Chronic Absenteeism across Demographic Variable, Grade, Borough, and District:
     - % Chronically Absent by Demographic Variable
     - % Chronically Absent by Grade
     - Next Year % Chronically Absent by District
